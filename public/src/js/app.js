@@ -23,12 +23,12 @@ var promise = new Promise(function(resolve, reject){
 }, 3000);
 });
 
-promise.then(function(text){
-    return text;
-}, function(err){
-    console.log(err.code, err.message)    
-}).then(function(newText){
-    console.log(newText);
-});
+// promise.then(function(text){
+//     return text;
+// }, function(err){
+//     console.log(err.code, err.message)    
+// }).then(function(newText){
+//     console.log(newText);
+// });
 
 console.log('This is executed right after setTimeOut()...')
