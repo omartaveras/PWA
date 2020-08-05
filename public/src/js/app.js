@@ -6,6 +6,9 @@ if('serviceWorker' in navigator){
     .register('/sw.js')
     .then(function(){
         console.log('Service worker registered');
+    })
+    .catch(function(err){
+        console.log(err);
     });
 }
 
@@ -34,7 +37,7 @@ var promise = new Promise(function(resolve, reject){
 
 promise.then(function(text){
     return text;
-}).then(newText){
+}).then(function(newText){
     console.log(err.code, err.message);    
 }).catch(function(err){
     console.log(err.code, err.message);
