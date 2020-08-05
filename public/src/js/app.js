@@ -25,6 +25,8 @@ var promise = new Promise(function(resolve, reject){
 
 promise.then(function(text){
     return text;
+}, function(err){
+    console.log(err.code, err.message)    
 }).then(function(newText){
     console.log(newText);
 });
