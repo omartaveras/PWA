@@ -31,6 +31,5 @@ var promise = new Promise(function(resolve, reject){
 //     console.log(newText);
 // });
 
-//
 
 console.log('This is executed right after setTimeOut()...')
