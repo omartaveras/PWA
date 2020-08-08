@@ -27,6 +27,11 @@ var promise = new Promise(function(resolve, reject){
 }, 3000);
 });
 
+fetch('https://httpbin.org/ip')
+    .then(function(response){
+        console.log(response);
+    });
+
 // promise.then(function(text){
 //     return text;
 // }, function(err){
