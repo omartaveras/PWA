@@ -45,6 +45,7 @@ fetch('https://httpbin.org/post', {
         'Constent-Type': 'application/json',
         'Accept': 'application/json'
     },
+    mode: 'cors',
     body: JSON.stringify({ message: 'Does this work?'})
 })
     .then(function (response) {
