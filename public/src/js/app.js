@@ -23,6 +23,8 @@ window.addEventListener('beforeinstallprompt', function(event) {
   return false;
 });
 
+
+//////////////////////////////Old version
 /** 
 var promise = new Promise(function(resolve, reject){
     setTimeout(function(){
