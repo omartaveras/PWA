@@ -1,6 +1,10 @@
 
 var deferredPrompt;
 
+if(!window.Promise){
+    window.Promise = Promise;
+}
+
 if('serviceWorker' in navigator){
     navigator.serviceWorker
     .register('/sw.js')
@@ -19,6 +23,7 @@ window.addEventListener('beforeInstallPrompt', function(event){
     return false;
 });
 
+/** 
 var promise = new Promise(function(resolve, reject){
     setTimeout(function(){
     //resolve('This is executed once the timer is done!');
@@ -90,4 +95,5 @@ promise.then(function(text){
 });
 
 
-console.log('This is executed right after setTimeOut()...')
+console.log('This is executed right after setTimeOut()...');
+*/
