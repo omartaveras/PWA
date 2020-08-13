@@ -20,8 +20,8 @@ self.addEventListener('install', function(event){
                 'https://fonts.googleapis.com/icon?family=Material+Icons',
                 'https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.indigo-pink.min.css'
               ]);
-            cache.add('/index.html');
-            cache.add('/src/js/app.js');
+            // cache.add('/index.html');
+            // cache.add('/src/js/app.js');
         })
     )
 });
