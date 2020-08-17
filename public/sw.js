@@ -19,9 +19,7 @@ self.addEventListener('install', function(event){
                 'https://fonts.googleapis.com/css?family=Roboto:400,700',
                 'https://fonts.googleapis.com/icon?family=Material+Icons',
                 'https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.indigo-pink.min.css'
-              ]);
-            // cache.add('/index.html');
-            // cache.add('/src/js/app.js');
+              ]);            
         })
     )
 });
@@ -31,15 +29,22 @@ self.addEventListener('activate', function(event) {
     return self.clients.claim();
   });
   
-  self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', function (event) {
     event.respondWith(
         caches.match(event.request)
-        .then(function(response){
-            if(response){
-                return response;
-            }else{
-                return fetch(event.request);
-            }
-        })
+            .then(function (response) {
+                if (response) {
+                    return response;
+                } else {
+                    return fetch(event.request)
+                        .then(function (res) {
+                            return caches.open('dynamic')
+                                .then(fucntion(cache){
+                                    cache.put(event.request.url, res.clone());
+                                    return res;
+                                })
+                        });
+                }
+            })
     );
-  });
+});
